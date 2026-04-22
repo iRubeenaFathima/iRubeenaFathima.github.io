@@ -3,25 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | 21 Initialized</title>
+    <title>Rubeena Fathima | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">RF.</a>
+            
+            <!-- Mobile Controls & Hamburger -->
+            <div class="nav-controls">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">🌓</button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+
+            <!-- Nav Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <header class="hero section-padding">
+    <header class="hero section-padding" id="hero">
         <div class="container">
             <p class="greeting">System.out.println("Hello, World");</p>
-            <h1 class="name">Her Name Here</h1>
+            <h1 class="name">Rubeena Fathima</h1>
             <h2 class="title-container">
                 <span class="terminal-prompt">&gt;</span> 
                 <span id="typewriter"></span><span class="cursor">_</span>
             </h2>
+            
+            <!-- Temporary Birthday Button -->
+            <button id="party-btn" class="party-btn glass-panel">🎉 Initialize Surprise</button>
         </div>
     </header>
 
+    <!-- Birthday Modal (Hidden by default) -->
+    <div id="bday-modal" class="modal hidden-modal">
+        <div class="modal-content glass-panel">
+            <h2>Level 21 Unlocked! 🎂</h2>
+            <p>Happy 21st Birthday, Rubeena! Wishing you an incredible year ahead filled with clean code, zero bugs, and massive success.</p>
+            <button id="close-modal" class="tech-link modal-btn">Close System Message <span>&rarr;</span></button>
+        </div>
+    </div>
+
     <!-- About Section -->
-    <section class="about section-padding hidden">
+    <section class="about section-padding hidden" id="about">
         <div class="container glass-panel">
             <h2>About Context</h2>
             <p>Cybersecurity student and developer focused on building secure, scalable, and high-performance applications. Bridging the gap between offensive security tactics and robust software engineering.</p>
@@ -29,7 +65,7 @@
     </section>
 
     <!-- Projects Grid -->
-    <section class="projects section-padding hidden">
+    <section class="projects section-padding hidden" id="projects">
         <div class="container">
             <h2>Active Deployments</h2>
             <div class="grid">
@@ -55,7 +91,7 @@
     </section>
 
     <!-- Terminal Easter Egg -->
-    <section class="easter-egg section-padding hidden">
+    <section class="easter-egg section-padding hidden" id="contact">
         <div class="container">
             <div class="terminal" id="terminal">
                 <div class="terminal-header">
