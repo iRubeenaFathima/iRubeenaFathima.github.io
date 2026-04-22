@@ -9,6 +9,8 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     --nav-bg: rgba(10, 10, 12, 0.85);
+    --modal-overlay: rgba(0, 0, 0, 0.7);
+    --modal-bg: #111114;
 }
 
 [data-theme="light"] {
@@ -21,6 +23,8 @@
     --glass-border: rgba(0, 0, 0, 0.1);
     --glass-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.05);
     --nav-bg: rgba(248, 250, 252, 0.85);
+    --modal-overlay: rgba(255, 255, 255, 0.4);
+    --modal-bg: #f1f5f9;
 }
 
 * {
@@ -35,7 +39,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
-    transition: background-color 0.4s ease, color 0.4s ease; /* Smooth Theme Swap */
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .container {
@@ -86,11 +90,28 @@ body {
     letter-spacing: -1px;
 }
 
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
 .nav-controls {
     display: flex;
     align-items: center;
     gap: 1rem;
-    z-index: 1001; /* Keep above mobile menu */
+    z-index: 1001;
 }
 
 .icon-btn {
@@ -103,21 +124,6 @@ body {
 }
 
 .icon-btn:active { transform: scale(0.8); }
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover { color: var(--accent); }
 
 /* Hamburger Menu */
 .hamburger {
@@ -138,11 +144,11 @@ body {
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
+    .nav-links { margin-left: 0; margin-right: 0; }
     .hamburger { display: flex; }
-    
     .nav-links {
         position: fixed;
-        top: -100vh; /* Hidden off top */
+        top: -100vh;
         left: 0;
         width: 100%;
         height: 100vh;
@@ -157,7 +163,6 @@ body {
     .nav-links.active { top: 0; }
     .nav-links.active a { font-size: 1.5rem; }
 
-    /* Hamburger Animation to 'X' */
     .hamburger.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -188,7 +193,7 @@ body {
 .modal {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--modal-overlay);
     backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
@@ -196,18 +201,19 @@ body {
     z-index: 2000;
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background 0.4s ease;
     padding: 1rem;
 }
 
 .modal.hidden-modal { opacity: 0; visibility: hidden; }
 
 .modal-content {
+    background: var(--modal-bg); /* Enforces light/dark theme inside modal */
     padding: 2.5rem;
     max-width: 500px;
     text-align: center;
     transform: scale(1);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.4s ease;
 }
 
 .modal.hidden-modal .modal-content { transform: scale(0.8); }
@@ -233,14 +239,12 @@ body {
 
 /* --- Sections & Cards --- */
 h2 { font-size: 2rem; margin-bottom: 2rem; font-weight: 600; }
-.about .glass-panel { padding: 3rem; }
-@media (max-width: 768px) { .about .glass-panel { padding: 1.5rem; } }
 .about p { color: var(--text-secondary); font-size: 1.1rem; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
 .card { transition: transform 0.3s ease, border-color 0.3s ease; }
 .card:hover { transform: translateY(-5px); border-color: var(--accent); }
-.card-content { padding: 2rem; }
+.card-content { padding: 2.5rem; }
 .card-content h3 { font-size: 1.25rem; margin-bottom: 1rem; }
 .card-content p { color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem; }
 
