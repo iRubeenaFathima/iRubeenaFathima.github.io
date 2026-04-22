@@ -31,7 +31,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 // --- 2. Typewriter Effect ---
-const words = ["Cybersecurity Student", "Developer", "Level 21 Reached"];
+const words = ["Cybersecurity Student", "Developer"];
 const typewriterElement = document.getElementById('typewriter');
 let wordIndex = 0;
 let charIndex = 0;
@@ -123,7 +123,7 @@ terminal.addEventListener('click', () => {
         "> User: Rubeena Fathima identified.",
         "> Fetching admin privileges...",
         "> Access Granted.",
-        "> System Message: Have a great 21st Birthday! 🚀"
+        "> System Message: Happy Birthday! 🚀"
     ];
     
     let msgIndex = 0;
