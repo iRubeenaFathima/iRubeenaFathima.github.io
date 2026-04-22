@@ -94,7 +94,7 @@
         </div>
     </section>
 
-    <!-- Terminal Easter Egg -->
+    <!-- Interactive Terminal -->
     <section class="easter-egg section-padding hidden" id="contact">
         <div class="container">
             <div class="terminal" id="terminal">
@@ -102,9 +102,16 @@
                     <span class="dot red"></span>
                     <span class="dot yellow"></span>
                     <span class="dot green"></span>
+                    <span class="term-title">bash - rf-portfolio</span>
                 </div>
-                <div class="terminal-body">
-                    <p class="sys-msg">Click to initialize connection...</p>
+                <div class="terminal-body" id="terminal-body">
+                    <div id="terminal-output">
+                        <p class="sys-msg">System Initialized. Type 'help' to see available commands.</p>
+                    </div>
+                    <div class="terminal-input-line">
+                        <span class="terminal-prompt">visitor@rf:~$</span>
+                        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+                    </div>
                 </div>
             </div>
         </div>
