@@ -11,8 +11,15 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">RF.</a>
+            <a href="#" class="logo">Rubeena Fathima</a>
             
+            <!-- Nav Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
             <!-- Mobile Controls & Hamburger -->
             <div class="nav-controls">
                 <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">🌓</button>
@@ -22,20 +29,13 @@
                     <span class="bar"></span>
                 </button>
             </div>
-
-            <!-- Nav Links -->
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero section-padding" id="hero">
         <div class="container">
-            <p class="greeting">System.out.println("Hello, World");</p>
+            <p class="greeting">console.log("Hi, I'm");</p>
             <h1 class="name">Rubeena Fathima</h1>
             <h2 class="title-container">
                 <span class="terminal-prompt">&gt;</span> 
@@ -47,20 +47,24 @@
         </div>
     </header>
 
-    <!-- Birthday Modal (Hidden by default) -->
+    <!-- Birthday Modal -->
     <div id="bday-modal" class="modal hidden-modal">
         <div class="modal-content glass-panel">
-            <h2>Level 21 Unlocked! 🎂</h2>
-            <p>Happy 21st Birthday, Rubeena! Wishing you an incredible year ahead filled with clean code, zero bugs, and massive success.</p>
+            <h2>Level Up! 🎂</h2>
+            <p>Happy Birthday, Rubeena! Wishing you an incredible year ahead filled with clean code, zero bugs, and massive success.</p>
             <button id="close-modal" class="tech-link modal-btn">Close System Message <span>&rarr;</span></button>
         </div>
     </div>
 
     <!-- About Section -->
     <section class="about section-padding hidden" id="about">
-        <div class="container glass-panel">
+        <div class="container">
             <h2>About Context</h2>
-            <p>Cybersecurity student and developer focused on building secure, scalable, and high-performance applications. Bridging the gap between offensive security tactics and robust software engineering.</p>
+            <div class="card glass-panel">
+                <div class="card-content">
+                    <p>Cybersecurity student and developer focused on building secure, scalable, and high-performance applications. Bridging the gap between offensive security tactics and robust software engineering.</p>
+                </div>
+            </div>
         </div>
     </section>
 
