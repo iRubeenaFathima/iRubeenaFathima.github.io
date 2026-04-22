@@ -66,24 +66,3 @@ const observer = new IntersectionObserver((entries, observer) => {
     });
 }, observerOptions);
 document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
-
-// --- 4. Birthday Surprise Logic ---
-const partyBtn = document.getElementById('party-btn');
-const bdayModal = document.getElementById('bday-modal');
-const closeModal = document.getElementById('close-modal');
-
-function throwConfetti() {
-    const colors = ['#38bdf8', '#ff5f56', '#ffbd2e', '#27c93f', '#a855f7'];
-    for (let i = 0; i < 100; i++) {
-        const confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        confetti.style.left = Math.random() * 100 + 'vw';
-        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-        document.body.appendChild(confetti);
-        setTimeout(() => confetti.remove(), 5000);
-    }
-}
-
-partyBtn.addEventListener('click', () => { throwConfetti(); bdayModal.classList.remove('hidden-modal'); });
-closeModal.addEventListener('click', () => { bdayModal.classList.add('hidden-modal'); });
