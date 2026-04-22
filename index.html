@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | 21 Initialized</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero section-padding">
+        <div class="container">
+            <p class="greeting">System.out.println("Hello, World");</p>
+            <h1 class="name">Her Name Here</h1>
+            <h2 class="title-container">
+                <span class="terminal-prompt">&gt;</span> 
+                <span id="typewriter"></span><span class="cursor">_</span>
+            </h2>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about section-padding hidden">
+        <div class="container glass-panel">
+            <h2>About Context</h2>
+            <p>Cybersecurity student and developer focused on building secure, scalable, and high-performance applications. Bridging the gap between offensive security tactics and robust software engineering.</p>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects section-padding hidden">
+        <div class="container">
+            <h2>Active Deployments</h2>
+            <div class="grid">
+                <!-- Project 1 -->
+                <div class="card glass-panel">
+                    <div class="card-content">
+                        <h3>Custom College Chatbot</h3>
+                        <p>An intelligent, customized chatbot architecture designed for campus-wide deployment. Engineered to handle student queries with high accuracy and low latency.</p>
+                        <a href="#" class="tech-link">View Repository <span>&rarr;</span></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card glass-panel">
+                    <div class="card-content">
+                        <h3>Phishing Simulation Platform</h3>
+                        <p>A controlled environment built to test, track, and analyze simulated phishing attacks. Focuses on social engineering vulnerabilities and awareness training.</p>
+                        <a href="#" class="tech-link">View Repository <span>&rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal Easter Egg -->
+    <section class="easter-egg section-padding hidden">
+        <div class="container">
+            <div class="terminal" id="terminal">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-body">
+                    <p class="sys-msg">Click to initialize connection...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <p class="status">System Status: Online</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
