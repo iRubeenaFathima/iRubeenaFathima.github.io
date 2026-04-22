@@ -1,8 +1,14 @@
-// --- 1. Theme Toggle & Mobile Menu Logic ---
+// --- 1. Theme Toggle, OS Pref & Mobile Menu Logic ---
 const themeToggleBtn = document.getElementById('theme-toggle');
 const body = document.documentElement;
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
+
+// Check user's OS preference on initial load
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    body.setAttribute('data-theme', 'light');
+    themeToggleBtn.textContent = '🌙';
+}
 
 themeToggleBtn.addEventListener('click', () => {
     const currentTheme = body.getAttribute('data-theme');
